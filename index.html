@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- Fixed viewport typo: initial-scale=1.0 -->
+    <meta name="viewport" content="width=device-width, initial=scale=1.0">
+    <meta name="author" content="Adina">
+    <title>Guessing Game</title>
+  </head>
+  <body>
+    
+    <h1 id="demo"></h1>
+    <script>
+      // Outer loop; it allows the game to repeat until the user stops.
+     let playAgain = true;
+      while (playAgain){
+        // Initialize a random number from 1 to 10
+        let randomNumber = Math.floor(Math.random()*10)+1;
+        document. getElementById("demo"). innerHTML= randomNumber;
+        console.log(randomNumber);
+
+        let guessCount = 0;
+        let guessedCorrectly = false;
+        // Repeat it to the user until they guess correctly
+        while (!guessedCorrectly){
+          let userGuess = prompt("Guess a number between 1 and 10:");
+          if(userGuess === null){
+            break;
+          }
+          userGuess = Number(userGuess);
+          guessCount++;
+
+          if(userGuess > randomNumber){
+            alert("Your guess is too high. Guess again.");
+          } else if(userGuess < randomNumber){
+            alert("Your guess is too low. Guess again.");
+          } else if(userGuess === randomNumber){
+            alert("Your guess was correct. You made" + guessCount +"guesses.");
+            guessedCorrectly = true;
+          }else{
+            alert("Please enter a valid number.");
+            guesscount--;
+          }
+        }
+        // Request to play again
+        playAgain = confirm("Do you want to play again?");
+      }
+   </script>  
+  </body>
+</html>
