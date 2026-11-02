@@ -23,7 +23,7 @@
         let guessedCorrectly = false;
         // Repeat it to the user until they guess correctly
         while (!guessedCorrectly){
-          let userGuess = prompt("Guess a number between 1 and 10:");
+          let userGuess = prompt("Guess a Number between 1 and 10:");
           if(userGuess === null){
             break;
           }
@@ -31,9 +31,9 @@
           guessCount++;
 
           if(userGuess > randomNumber){
-            alert("Your guess is too high. Guess again.");
+            alert("Your guess was too high, guess again.");
           } else if(userGuess < randomNumber){
-            alert("Your guess is too low. Guess again.");
+            alert("Your guess was too low, guess again.");
           } else if(userGuess === randomNumber){
             alert("Your guess was correct. You made" + guessCount +"guesses.");
             guessedCorrectly = true;
